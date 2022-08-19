@@ -1,0 +1,18 @@
+<div class='justify-content-center' style="width: 100%">
+  <%= image_tag "movie.png", alt: "movie",  class: "center" %>
+</div>
+<div class='container '>
+  <a href=<%=new_list_path%> class="btn btn-success m-3 ">Add list</a>
+</div>
+<div class='container'>
+  <%@lists.each do |list| %>
+    <div class='container d-flex mx-2', style=" width:20%">
+      <div class="card text-bg-dark">
+        <%= image_tag "classic.jpg", alt: "movie",  class: "card-img" %>
+        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+          <h5 class="card-title "><%=link_to list.name, list_path(list)%></h5>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
